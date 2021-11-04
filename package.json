@@ -1,24 +1,15 @@
 {
-  "name": "book-search-engine",
+  "name": "real",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"cd server && npm start\" \"cd client && npm start\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/peterjinchristiansen/21-Book-Search-Engine.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/peterjinchristiansen/21-Book-Search-Engine/issues"
-  },
-  "homepage": "https://github.com/peterjinchristiansen/21-Book-Search-Engine#readme",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^6.3.0"
   }
 }
