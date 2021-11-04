@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
 import { LOGIN } from '../utils/Mutations'
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks'
 
 import Auth from '../utils/Auth'
 
@@ -9,8 +9,7 @@ const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ email: '', password: '' })
     const [validated] = useState(false)
     const [showAlert, setShowAlert] = useState(false)
-
-    const [login] = useMutation(LOGIN);
+    const [login] = useMutation(LOGIN)
 
     const handleInputChange = (event) => {
         const { name, value } = event.target
@@ -18,22 +17,20 @@ const LoginForm = () => {
     }
 
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
-
+        event.preventDefault()
         try {
-          const { data } = await login({
-            variables: { ...userFormData }
-          });
-          console.log(data)
-          Auth.login(data.login.token);
+            const { data } = await login({
+                variables: { ...userFormData }
+            })
+            console.log(data)
+            Auth.login(data.login.token)
         } catch (e) {
-          console.error(e);
+            console.error(e)
         }
-
         setUserFormData({
-          email: '',
-          password: ''
-        });
+            email: '',
+            password: ''
+        })
     }
 
     return (

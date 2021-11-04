@@ -14,22 +14,22 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks', {
         useNewUrlParser: true,
         useUnifiedTopology: true
 }).then(() => console.log('Connected to DB'))
-    let apolloServer = null;
-    async function startServer() {
-        apolloServer = new ApolloServer({
-            typeDefs,
-            resolvers,
-            graphiql: true,
-            context: authMiddleware
-        })
-        await apolloServer.start()
-        apolloServer.applyMiddleware({ app })
-    }
-    startServer();
-    const httpserver = http.createServer(app)
-    app.listen(4000, function () {
-        console.log(`server running on port 4000`)
+let apolloServer = null
+const startServer = async () => {
+    apolloServer = new ApolloServer({
+        typeDefs,
+        resolvers,
+        graphiql: true,
+        context: authMiddleware
     })
+    await apolloServer.start()
+    apolloServer.applyMiddleware({ app })
+}
+startServer()
+const httpserver = http.createServer(app)
+app.listen(PORT, function () {
+    console.log(`server running on PORT ${PORT}...`)
+})
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
