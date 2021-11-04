@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken')
 
-const secret = 'mysecretsshhhhh'
-
 module.exports = {
     authMiddleware: function({ req }) {
         let token = req.body.token || req.query.token || req.headers.authorization
