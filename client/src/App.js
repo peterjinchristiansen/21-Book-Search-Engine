@@ -13,7 +13,7 @@ const client = new ApolloClient({
             headers: { authorization: token ? `Bearer ${token}` : '' }
         })
     },
-    uri: 'http://localhost:4000/graphql'
+    uri: 'https://vast-brushlands-83091.herokuapp.com/'
 })
 
 const App = () => {
