@@ -52,6 +52,7 @@ If you have any questions, you can email me at peterjinchristiansen@gmail.com. Y
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/82626937/138556892-4f2fbab5-b869-4dc5-994a-a8c58117c137.png)
+![image](https://user-images.githubusercontent.com/82626937/140463474-2a592948-e65e-44e7-9afa-e3f7da7b0d64.png)
+
 
 ---

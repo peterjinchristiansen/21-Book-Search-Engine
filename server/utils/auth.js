@@ -21,7 +21,6 @@ module.exports = {
         return req
     },
     signToken: ({ username, email, _id }) => {
-        console.log('hi')
         const payload = { username, email, _id }
         return jwt.sign({ data: payload }, 'mysecretsshhhhh', { expiresIn: '2h' })
     }

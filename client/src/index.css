@@ -8,11 +8,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Rubik Mono One', sans-serif;
 }
 
-img {
-    width: 100px;
-    height: 200px;
-}
-
 .small {
     font-weight: 300;
     font-style: italic;
