@@ -3,7 +3,7 @@
 ---
 ## Description
 
-    This is a website that simulates a blog, and includes complete user authentication, sessions, and basic blog features.
+    This is a website that allows users to fetch and save books from the google books API.
 
 ---
 
