@@ -13,7 +13,7 @@ const app = express()
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks', {
         useNewUrlParser: true,
         useUnifiedTopology: true
-}).then(() => console.log('Connected to DB'))
+}).then(() => console.log('Connected to DB')).catch(error => console.log('ERROR => ', error))
 let apolloServer = null
 const startServer = async () => {
     apolloServer = new ApolloServer({
@@ -34,11 +34,11 @@ app.listen(PORT, function () {
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-// if (process.env.NODE_ENV === 'production') {
-//     console.log(process.env.NODE_ENV)
-//   app.use(express.static(path.join(__dirname, '../client/build')))
-// }
+if (process.env.NODE_ENV === 'production') {
+    console.log(process.env.NODE_ENV)
+  app.use(express.static(path.join(__dirname, '../client/build')))
+}
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'))
-// })
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
