@@ -36,7 +36,7 @@ If on the github repo, to install your dependencies you will be using the follow
 
 ## Usage
 
-Link to deployed application: https://tech-blog-1234.herokuapp.com/
+Link to deployed application: https://vast-brushlands-83091.herokuapp.com/
 
 ---
 
@@ -48,7 +48,6 @@ If you have any questions, you can email me at peterjinchristiansen@gmail.com. Y
 
 
 ---
-
 
 
 ## Screenshot
