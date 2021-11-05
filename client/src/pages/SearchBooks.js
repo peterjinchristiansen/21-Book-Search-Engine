@@ -84,8 +84,8 @@ const SearchBooks = () => {
             <Container>
             <h2>
                 {
-                    searchedBooks.length ?
-                    `Viewing ${searchedBooks.length} results:`:
+                    searchedBooks.bookCount ?
+                    `Viewing ${searchedBooks.bookCount} results:`:
                     'Search for a book to begin'
                 }
             </h2>

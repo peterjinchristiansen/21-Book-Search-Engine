@@ -20,7 +20,7 @@ const SavedBooks = () => {
             const { data } = await removeBook({
                 variables: { bookId }
             })
-            removeBookId(data);
+            removeBookId(bookId);
         } catch (error) {
             console.log('ERROR => ', error);
         }
@@ -29,6 +29,10 @@ const SavedBooks = () => {
     if (loading) {
         return <h2>LOADING...</h2>;
     }
+    if(userData) {
+        console.log(userData)
+    }
+
 
     return (
         <>
@@ -40,13 +44,13 @@ const SavedBooks = () => {
         <Container>
             <h2>
                 {
-                    userData.bookCount ?
-                    `Viewing ${userData.bookCount} saved ${userData.bookCount === 1 ? 'book' : 'books'}:` :
+                    userData.savedBooks?.length ?
+                    `Viewing ${userData.savedBooks.length} saved ${userData.savedBooks.length === 1 ? 'book' : 'books'}:` :
                     'You have no saved books!'
                 }
             </h2>
             <CardColumns>
-                {userData.savedBooks.map((book) => {
+                {userData.savedBooks?.map((book) => {
                     return (
                         <Card key={book.bookId} border="dark">
                             {
